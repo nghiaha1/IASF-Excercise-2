@@ -1,7 +1,6 @@
-package com.spring.iasfex2.controller;
+package com.spring.iasfex2.controller.product;
 
 import com.spring.iasfex2.entity.Product;
-import com.spring.iasfex2.repository.ProductRepository;
 import com.spring.iasfex2.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
