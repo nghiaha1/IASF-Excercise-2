@@ -46,6 +46,7 @@ public class ProductController {
             existingProduct.setPrice(updatedObj.getPrice());
             existingProduct.setThumbnail(updatedObj.getThumbnail());
             existingProduct.setManufacturer(updatedObj.getManufacturer());
+            existingProduct.setStatus(updatedObj.getStatus());
             productService.save(existingProduct);
             return ResponseEntity.ok(productService.save(existingProduct));
         }
