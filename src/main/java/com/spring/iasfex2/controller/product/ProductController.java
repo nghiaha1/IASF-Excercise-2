@@ -1,6 +1,7 @@
-package com.spring.iasfex2.controller.product;
+package com.spring.iasfex2.controller;
 
 import com.spring.iasfex2.entity.Product;
+import com.spring.iasfex2.repository.ProductRepository;
 import com.spring.iasfex2.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -8,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
-@CrossOrigin(value = "*")
 @RestController
 @RequestMapping(path = "api/v1/products")
 public class ProductController {
@@ -46,7 +46,6 @@ public class ProductController {
             existingProduct.setPrice(updatedObj.getPrice());
             existingProduct.setThumbnail(updatedObj.getThumbnail());
             existingProduct.setManufacturer(updatedObj.getManufacturer());
-            existingProduct.setStatus(updatedObj.getStatus());
             productService.save(existingProduct);
             return ResponseEntity.ok(productService.save(existingProduct));
         }

@@ -19,8 +19,8 @@ import java.util.Date;
 @ToString
 @Entity
 @Table(name = "products")
-@SQLDelete(sql = "UPDATE products SET status = 0 WHERE id = ?")
-@Where(clause = "status = 0")
+@SQLDelete(sql = "UPDATE products SET deleted=true WHERE id=?")
+@Where(clause = "deleted = false")
 public class Product {
 
     @Id
@@ -43,17 +43,20 @@ public class Product {
     private String manufacturer;
 
     @CreationTimestamp
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createdAt;
 
     @UpdateTimestamp
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date updatedAt;
 
     @UpdateTimestamp
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date deletedAt;
 
     private String createdBy;
 
     private String updatedBy;
 
-    private int status;
+    private boolean deleted;
 }
