@@ -1,4 +1,4 @@
-package com.spring.iasfex2.controller;
+package com.spring.iasfex2.controller.product;
 
 import com.spring.iasfex2.entity.Product;
 import com.spring.iasfex2.repository.ProductRepository;
@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
-
+@CrossOrigin(value = "*")
 @RestController
 @RequestMapping(path = "api/v1/products")
 public class ProductController {
