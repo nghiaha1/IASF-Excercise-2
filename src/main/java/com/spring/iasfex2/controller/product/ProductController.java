@@ -29,9 +29,9 @@ public class ProductController {
     public ResponseEntity<?> findById(@PathVariable Long id) {
         Optional<Product> optionalProduct = productService.findById(id);
         if (optionalProduct.isPresent()) {
-            ResponseEntity.ok(optionalProduct.get());
+            ResponseEntity.badRequest().build();
         }
-        return ResponseEntity.badRequest().build();
+        return ResponseEntity.ok(optionalProduct.get());
     }
 
     @RequestMapping(method = RequestMethod.PUT, path = "{id}")
